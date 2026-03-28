@@ -1050,115 +1050,195 @@ ul, ol { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 3.5rem;
+  gap: 1.5rem;
+  margin: 0 auto 4rem;
+  padding: 8px;
+  background: var(--bg-mid);
+  border-radius: var(--radius-pill);
+  width: fit-content;
   font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--text-muted);
-}
-.pricing__toggle-label--active { color: var(--text-primary); }
-.pricing__switch {
-  width: 48px; height: 26px;
-  border-radius: 99px;
-  background: var(--bg-card);
+  font-weight: 600;
+  color: var(--text-secondary);
   border: 1px solid var(--bg-card-border);
-  position: relative;
-  transition: background 0.3s;
 }
-.pricing__switch--on { background: var(--primary); border-color: var(--primary); }
+
+.pricing__toggle-label--active { 
+  color: var(--primary); 
+}
+
+.pricing__switch {
+  width: 52px; height: 28px;
+  border-radius: 99px;
+  background: var(--bg-card-border);
+  border: none;
+  position: relative;
+  transition: all 0.4s var(--ease-out);
+  cursor: pointer;
+}
+
+.pricing__switch--on { 
+  background: var(--primary); 
+}
+
 .pricing__switch-knob {
   position: absolute;
-  top: 3px; left: 3px;
-  width: 18px; height: 18px;
+  top: 4px; left: 4px;
+  width: 20px; height: 20px;
   border-radius: 50%;
   background: white;
-  transition: transform 0.3s var(--ease-bounce);
+  transition: transform 0.4s var(--ease-bounce);
+  box-shadow: var(--shadow-sm);
 }
-.pricing__switch--on .pricing__switch-knob { transform: translateX(22px); }
+
+.pricing__switch--on .pricing__switch-knob { 
+  transform: translateX(24px); 
+}
+
 .pricing__discount {
-  padding: 0.15rem 0.5rem;
+  padding: 0.2rem 0.6rem;
   border-radius: var(--radius-pill);
-  background: rgba(34,211,163,0.12);
+  background: rgba(5, 150, 105, 0.1);
   color: var(--success);
-  font-size: 0.75rem;
-  font-weight: 700;
-  margin-left: 4px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-left: 6px;
 }
 
 .pricing__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
   padding: 20px 0;
 }
 
 .pricing-card {
-  padding: 2.5rem 2.25rem;
+  padding: 3.5rem 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   position: relative;
+  background: var(--bg-card);
 }
+
 .pricing-card--popular {
-  border-color: var(--primary) !important;
-  transform: scale(1.04);
-  box-shadow: 0 24px 60px rgba(91,82,240,0.22);
-  z-index: 1;
+  border: 2px solid var(--primary) !important;
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg), 0 0 40px rgba(79, 70, 229, 0.08);
+  z-index: 2;
 }
-.pricing-card--popular:hover { transform: scale(1.04) translateY(-6px); }
+
+.pricing-card--popular:hover { 
+  transform: scale(1.05) translateY(-8px); 
+}
+
 .pricing-card__popular-label {
   position: absolute;
   top: -14px; left: 50%;
   transform: translateX(-50%);
   background: var(--primary);
   color: white;
-  padding: 0.3rem 1rem;
+  padding: 0.4rem 1.25rem;
   border-radius: var(--radius-pill);
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
 }
-.pricing-card__header h3 { font-size: 1.5rem; margin-bottom: 0.4rem; }
-.pricing-card__desc { color: var(--text-secondary); font-size: 0.9rem; }
+
+.pricing-card__tier { 
+  font-size: 1.75rem; 
+  margin-bottom: 0.5rem; 
+  font-weight: 800;
+}
+
+.pricing-card__desc { 
+  color: var(--text-secondary); 
+  font-size: 1rem; 
+  line-height: 1.5;
+}
+
 .pricing-card__price {
-  display: flex;
-  align-items: baseline;
-  gap: 2px;
+  margin: 1rem 0;
 }
-.pricing-card__currency { font-size: 1.4rem; font-weight: 700; color: var(--text-secondary); }
-.pricing-card__amount { font-size: 3.2rem; font-weight: 900; letter-spacing: -0.03em; }
-.pricing-card__amount--custom { font-size: 2.2rem; }
-.pricing-card__period { color: var(--text-muted); margin-left: 2px; }
-.pricing-card__features { display: flex; flex-direction: column; gap: 0.9rem; flex: 1; }
-.pricing-card__feature { display: flex; align-items: center; gap: 0.75rem; font-size: 0.94rem; }
-.pricing-card__check { color: var(--success); flex-shrink: 0; }
-.pricing-card--popular .pricing-card__check { color: var(--primary-light); }
+
+.pricing-card__amount { 
+  font-size: 4rem; 
+  font-weight: 900; 
+  letter-spacing: -0.04em; 
+  color: var(--text-primary);
+}
+
+.pricing-card__currency { 
+  font-size: 1.5rem; 
+  font-weight: 700; 
+  color: var(--text-muted); 
+  position: relative;
+  top: -1.2rem;
+}
+
+.pricing-card__period { 
+  color: var(--text-muted); 
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.pricing-card__features { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1.25rem; 
+  flex: 1; 
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--bg-card-border);
+}
+
+.pricing-card__feature { 
+  display: flex; 
+  align-items: center; 
+  gap: 1rem; 
+  font-size: 1rem; 
+  color: var(--text-secondary);
+}
+
+.pricing-card__check { 
+  color: var(--success); 
+  background: rgba(5, 150, 105, 0.1);
+  padding: 4px;
+  border-radius: 50%;
+  flex-shrink: 0; 
+}
+
 .pricing-card__btn-outline {
   width: 100%;
-  padding: 1rem;
+  padding: 1.1rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--bg-card-border);
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 700;
+  font-size: 1rem;
   color: var(--text-primary);
-  background: rgba(255,255,255,0.04);
-  transition: background 0.2s, border-color 0.2s;
+  background: var(--bg-mid);
+  transition: all 0.3s var(--ease-smooth);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 10px;
 }
-.pricing-card__btn-outline:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
+
+.pricing-card__btn-outline:hover { 
+  background: var(--bg-card-border); 
+  border-color: var(--text-muted);
+  transform: translateY(-2px);
+}
 
 .pricing__note {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 4rem;
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 /* ── 20.  Testimonials ────────────────────────────────────────────── */
