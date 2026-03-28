@@ -17,7 +17,6 @@ export const NAV_LINKS = [
   { label: 'Features',   href: '#features' },
   { label: 'Solutions',  href: '#solutions' },
   { label: 'Pricing',    href: '#pricing' },
-  { label: 'About',      href: '#about' },
   { label: 'Contact',    href: '#contact' },
 ];
 
@@ -221,7 +220,7 @@ export const LOGOS = [
 
 export const FOOTER_LINKS = {
   Product: ['Features', 'Integrations', 'Pricing', 'Changelog', 'Roadmap'],
-  Company: ['About', 'Careers', 'Blog', 'Press', 'Legal'],
+  Company: ['Careers', 'Blog', 'Press', 'Legal'],
   Support: ['Documentation', 'API Reference', 'Community', 'Status Page', 'Contact'],
   Legal: ['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'GDPR'],
 };

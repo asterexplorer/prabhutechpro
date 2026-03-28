@@ -12,7 +12,6 @@ import Stats        from './components/sections/Stats';
 import Features     from './components/sections/Features';
 import Solutions    from './components/sections/Solutions';
 import Skills       from './components/sections/Skills';
-import About        from './components/sections/About';
 import Pricing      from './components/sections/Pricing';
 import Testimonials from './components/sections/Testimonials';
 import FAQ          from './components/sections/FAQ';
