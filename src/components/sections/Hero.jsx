@@ -8,14 +8,6 @@ const AVATARS = ['A', 'R', 'K', 'S'];
 
 const Hero = () => (
   <section id="home" className="hero">
-    {/* Background orbs */}
-    <div className="hero-orb hero-orb-1" aria-hidden="true" />
-    <div className="hero-orb hero-orb-2" aria-hidden="true" />
-    <div className="hero-orb hero-orb-3" aria-hidden="true" />
-
-    {/* Grid lines overlay */}
-    <div className="hero-grid" aria-hidden="true" />
-
     <div className="hero__content">
       {/* Announcement banner */}
       <a href="#features" className="hero__announce">

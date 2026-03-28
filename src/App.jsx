@@ -64,6 +64,11 @@ const App = () => {
   return (
     <ErrorBoundary>
       <div id="app-root">
+        <div className="orb-bg">
+          <div className="orb orb-1"></div>
+          <div className="orb orb-2"></div>
+          <div className="orb orb-3"></div>
+        </div>
         <Navbar />
         <main id="main-content">
           <Hero />
