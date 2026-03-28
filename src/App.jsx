@@ -89,6 +89,8 @@ const App = () => {
   return (
     <ErrorBoundary>
       <div id="app-root">
+        <div className="noise-overlay" aria-hidden="true" />
+        
         {/* Realtime Toast */}
         {toast && (
           <div className="live-toast">
@@ -101,10 +103,18 @@ const App = () => {
         )}
 
         <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
+        
         <div className="orb-bg">
           <div className="orb orb-1"></div>
           <div className="orb orb-2"></div>
           <div className="orb orb-3"></div>
+          
+          {/* Minimum drifting particles */}
+          <div className="particles">
+            <div className="particle" style={{ top: '15%', left: '10%', animationDelay: '0s' }} />
+            <div className="particle" style={{ top: '65%', left: '80%', animationDelay: '-5s' }} />
+            <div className="particle" style={{ top: '45%', left: '30%', animationDelay: '-10s' }} />
+          </div>
         </div>
         <Navbar />
         <main id="main-content">

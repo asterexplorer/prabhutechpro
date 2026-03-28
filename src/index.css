@@ -100,12 +100,47 @@ body {
   overflow: hidden;
 }
 
+/* Subtle Noise Overlay for Texture */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0.015; /* Extremely subtle grain */
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  mix-blend-mode: overlay;
+}
+
+/* Floating Particles (Mini-dots) */
+.particles {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 3px; height: 3px;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0.08;
+  animation: float-particle 20s infinite linear;
+}
+
+@keyframes float-particle {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(100px, 100px); }
+  100% { transform: translate(-50px, 200px); }
+}
+
 .orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(140px);
-  opacity: 0.18; /* Lower opacity for light mode */
+  filter: blur(150px);
+  opacity: 0.14; /* Even softer for minimalism */
   animation: orb-move 25s infinite alternate var(--ease-smooth);
+  will-change: transform;
 }
 
 .orb-1 {
