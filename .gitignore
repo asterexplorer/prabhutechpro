@@ -14,6 +14,7 @@ server/.env
 
 # Data files (generated at runtime)
 server/submissions.json
+server/subscribers.json
 
 # Logs
 *.log
