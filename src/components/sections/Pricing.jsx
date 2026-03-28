@@ -83,7 +83,7 @@ const Pricing = () => {
           </span>
         </div>
 
-        <div className="pricing__grid">
+        <div className="pricing__grid reveal">
           {PRICING_TIERS.map((tier) => (
             <PricingCard
               key={tier.tier}

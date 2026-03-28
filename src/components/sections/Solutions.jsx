@@ -33,7 +33,7 @@ const Solutions = () => (
         title={`Built for <span class="gradient-text">Every Team</span>`}
         subtitle="Whether you're a scrappy startup, a global enterprise, or a growing agency — Prabhu Tech Pro has a solution tailored for you."
       />
-      <div className="grid-3">
+      <div className="grid-2 reveal">
         {SOLUTIONS.map((sol, i) => (
           <SolutionCard key={sol.title} {...sol} index={i} />
         ))}

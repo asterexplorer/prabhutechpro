@@ -39,7 +39,7 @@ const Features = () => (
         title={`Everything You Need to <span class="gradient-text">Dominate</span> Your Industry`}
         subtitle="Prabhu Tech Pro provides the most comprehensive toolkit designed for modern, enterprise-grade SaaS businesses."
       />
-      <div className="grid-3">
+      <div className="grid-3 reveal">
         {FEATURES.map((feature, i) => (
           <FeatureCard key={feature.title} {...feature} index={i} />
         ))}

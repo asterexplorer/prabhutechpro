@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useScrollReveal } from './hooks/useScrollReveal';
 
 // Layout
@@ -39,9 +39,20 @@ class ErrorBoundary extends React.Component {
 const App = () => {
   const [email, setEmail]   = useState('');
   const [status, setStatus] = useState('');
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   // Wire scroll-reveal after every render
   useScrollReveal();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalScroll) * 100;
+      setScrollProgress(progress);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleNewsletter = async (e) => {
     e.preventDefault();
@@ -64,6 +75,7 @@ const App = () => {
   return (
     <ErrorBoundary>
       <div id="app-root">
+        <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
         <div className="orb-bg">
           <div className="orb orb-1"></div>
           <div className="orb orb-2"></div>
