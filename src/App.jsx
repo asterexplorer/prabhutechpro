@@ -123,7 +123,6 @@ const App = () => {
           <Features />
           <Skills />
           <Solutions />
-          <About />
           <Pricing />
           <Testimonials />
           <FAQ />
